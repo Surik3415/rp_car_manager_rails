@@ -1,0 +1,34 @@
+<div id="cars">                
+  <% @search_requests.each do |search_request| %>
+      <%if current_user.id == search_request.user_id%>  
+          <div style="display:inline-block">
+              <div class="card p-2 m-4" style="width: 20rem">
+                  <p>
+                  <strong>Make:</strong>
+                  <%= search_request.make %>
+                  </p>
+                  <p> 
+                  <strong>Model:</strong>
+                  <%= search_request.model %>
+                  </p>
+                  <p>
+                  <strong>Year:</strong>
+                  <%= search_request.year_from %>
+                  </p>
+                  <p>
+                  <strong>Year:</strong>
+                  <%= search_request.year_to %>
+                  </p>
+                  <p>
+                  <strong>Price:</strong>
+                  <%= search_request.price_from %>
+                  </p>
+                  <p>
+                  <strong>Price:</strong>
+                  <%= search_request.price_to %>
+                  </p>
+              </div>
+          </div>
+      <%end%>
+  <%end%>
+</div>

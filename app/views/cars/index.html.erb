@@ -1,0 +1,20 @@
+<%= currently_at %>
+<div class = "wraper">
+  <div class = "container">
+    <p style="color: green"><%= notice %></p>
+
+    <h1>Cars</h1>
+
+    <%= render "sort_links", car: @car %>
+
+    <div id="cars">
+      <% @cars.each do |car| %>
+        <%= render car %>
+      <% end %>
+    </div>
+
+    <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1%>
+
+    <%=link_to 'Back to Home page', root_path,  class: 'btn btn-primary m-4'%> 
+  </div>
+</div>
