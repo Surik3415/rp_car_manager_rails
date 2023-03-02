@@ -7,6 +7,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+# 10.times do
+#   Car.create(make: Faker::Vehicle.make, model: Faker::Vehicle.model,
+#   year: Faker::Vehicle.year, price: Faker::Number.between(from: 10_000, to: 25_000))
+# end
+
 Car.create(car_id: '1ec46226-330f-11ec-8d3d-0242ac130003',
            make: 'Ford',
            model: 'Fusion',
