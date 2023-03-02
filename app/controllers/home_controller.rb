@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 # controller for root page
-class PagesController < ApplicationController
+class HomeController < ApplicationController
   def index
-    render 'pages/index'
   end
 end

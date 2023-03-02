@@ -4,7 +4,7 @@
 class SearchRequestsController < ApplicationController
   def index
     if user_signed_in?
-      @search_requests = SearchRequest.all
+      @search_requests = SearchRequest.where(user_id: current_user.id)
     else
       redirect_to new_user_session_path
       flash[:alert] = 'Please log in to see your search story'

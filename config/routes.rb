@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   resources :search_requests, only: %i[index new create]
 
   get '/help', to: 'cars#help'
-  root 'pages#index'
+  root 'home#index'
 end
