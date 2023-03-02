@@ -22,7 +22,7 @@ RSpec.describe SearchRequestsController, type: :controller do
       it 'assigns all search requests as @search_requests' do
         sign_in pablito
         get :index
-        expect(assigns(:search_requests)).to eq(SearchRequest.all)
+        expect(assigns(:search_requests)).to eq(SearchRequest.where(user_id: pablito.id))
       end
     end
 
