@@ -1,25 +1,20 @@
 # frozen_string_literal: true
 
-require_relative '../services/filter'
-require_relative '../services/sort'
+require_relative '../query/filter'
+require_relative '../query/sort'
 
 # controller for cars
 class CarsController < ApplicationController
-  include Sort
-  include Filter
-  
+  include Query
+
   def index
     @cars = Car.all
-    filter
+    filter = Query::Filter.new(@cars, params)
+    @cars = filter.call
     @pagy, @cars = pagy(@cars)
-    sort
+    sorter = Query::Sort.new(@cars, params)
+    @cars = sorter.call
   end
 
   def help; end
-
-  private
-
-  def search_params
-    params.require(:search_request).permit(:make, :model, :year_from, :year_to, :price_from, :price_to)
-  end
 end
