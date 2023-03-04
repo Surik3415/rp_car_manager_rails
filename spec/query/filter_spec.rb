@@ -51,6 +51,7 @@ RSpec.describe Query::Filter do
         expect(subject).to contain_exactly(car2, car3)
       end
     end
+    DatabaseCleaner.clean
   end
 end
 # rubocop:enable Metrics/BlockLength

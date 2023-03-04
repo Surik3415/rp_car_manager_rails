@@ -74,5 +74,6 @@ RSpec.describe SearchRequestsController, type: :controller do
       end
     end
   end
+  DatabaseCleaner.clean
 end
 # rubocop:enable Metrics/BlockLength

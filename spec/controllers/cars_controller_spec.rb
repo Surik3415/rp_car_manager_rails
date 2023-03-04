@@ -68,6 +68,7 @@ RSpec.describe CarsController, type: :controller do
         expect(assigns(:pagy).items).to eq(6)
       end
     end
+    DatabaseCleaner.clean
   end
 
   describe 'GET #help' do
