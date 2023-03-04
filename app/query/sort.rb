@@ -2,12 +2,11 @@
 
 # module Query
 module Query
-
   # class for sorting
   class Sort
     attr_reader :cars
 
-    def initialize(cars, params)
+    def initialize(cars, params = {})
       @cars = cars
       @params = params
     end
@@ -19,7 +18,7 @@ module Query
     end
 
     private
-    
+
     def sort_by_prise(params)
       return unless params[:sort] == 'price'
 
