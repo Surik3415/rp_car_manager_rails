@@ -1,5 +1,5 @@
-<div style="display:flex; gap:30px">
-
+<div class="sort_btn_block">
+    <p> Sort buttons: </p>
     <%= link_to 'Price (Low to High)', params.to_unsafe_h.merge( sort: 'price', direction: 'asc' ), class:'btn btn-primary' %> 
     <%= link_to 'Price (High to Low)', params.to_unsafe_h.merge( sort: 'price', direction: 'desc'), class:'btn btn-primary' %>
 

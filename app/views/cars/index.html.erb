@@ -7,6 +7,10 @@
 
     <%= render "sort_links", car: @car %>
 
+    <div class = 'mt-3'>
+      <%= render 'params'%>
+    </div>
+
     <div id="cars">
       <% @cars.each do |car| %>
         <%= render car %>
