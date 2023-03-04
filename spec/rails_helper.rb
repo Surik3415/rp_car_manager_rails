@@ -5,6 +5,7 @@
 require 'spec_helper'
 
 require 'database_cleaner/active_record'
+require_relative 'support/database_cleaner'
 DatabaseCleaner.strategy = :truncation
 
 require 'simplecov'
