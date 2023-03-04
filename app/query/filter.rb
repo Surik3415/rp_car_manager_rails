@@ -6,7 +6,7 @@ module Query
 
   # class for filter
   class Filter
-    def initialize(cars, params)
+    def initialize(cars, params = {})
       @cars = cars
       @params = params
     end

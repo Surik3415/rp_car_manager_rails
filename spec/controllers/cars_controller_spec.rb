@@ -19,19 +19,16 @@ RSpec.describe CarsController, type: :controller do
         expect(response).to render_template(:index)
       end
     end
-    DatabaseCleaner.clean
   end
 
   context 'when the pagination applied' do
+    before { get :index }
     let!(:cars) { create_list(:car, 20) }
     let!(:default_per_page) { 6 }
-
-    before { get :index }
 
     it 'returns default amount of items per page' do
       expect(assigns(:pagy).items).to eq(default_per_page)
     end
-    DatabaseCleaner.clean
   end
 
   describe 'GET #help' do
