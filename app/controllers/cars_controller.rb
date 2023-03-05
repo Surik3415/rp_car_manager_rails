@@ -26,6 +26,6 @@ class CarsController < ApplicationController
 
   # A list of the param names that can be used for filtering the Car list
   def filtering_params(params)
-    params.slice(:make, :model)
+    params.slice(:make, :model, :year_from, :year_to, :price_from, :price_to)
   end
 end
