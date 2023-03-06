@@ -36,7 +36,6 @@
 /node_modules
 coverage
 coverage
-
 # Ignore yarn
 .yarn
 
