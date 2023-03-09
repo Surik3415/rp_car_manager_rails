@@ -22,6 +22,6 @@ class CarsController < ApplicationController
   end
 
   def sort_params
-    params.slice(:price_direction, :date_added_direction)
+    params.slice(:direction, :sort_by)
   end
 end

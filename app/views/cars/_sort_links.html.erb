@@ -1,9 +1,9 @@
 <div class="sort_btn_block">
     <p> Sort buttons: </p>
-    <%= link_to 'Price (Low to High)', params.to_unsafe_h.merge( price_direction: "desc"), class:'btn btn-primary' %> 
-    <%= link_to 'Price (High to Low)', params.to_unsafe_h.merge( price_direction: "asc"), class:'btn btn-primary' %>
+    <%= link_to 'Price (Low to High)', params.to_unsafe_h.merge( sort_by: 'price', direction: "desc"), class:'btn btn-primary' %> 
+    <%= link_to 'Price (High to Low)', params.to_unsafe_h.merge( sort_by: 'price', direction: "asc"), class:'btn btn-primary' %>
 
-    <%= link_to 'Date added (Oldest to Newest)', params.to_unsafe_h.merge( date_added_direction: "desc"), class:'btn btn-primary' %> 
-    <%= link_to 'Date added (Newest to Oldest)', params.to_unsafe_h.merge(date_added_direction: "asc"), class:'btn btn-primary' %> 
+    <%= link_to 'Date added (Oldest to Newest)', params.to_unsafe_h.merge( sort_by: 'date_added', direction: "desc"), class:'btn btn-primary' %> 
+    <%= link_to 'Date added (Newest to Oldest)', params.to_unsafe_h.merge( sort_by: 'date_added', direction: "asc"), class:'btn btn-primary' %> 
 
 </div>

@@ -18,11 +18,15 @@ module Sortable
   # ClassMethods
   module ClassMethods
     def sort_it(sort_params)
-      results = where(nil)
-      if sort_params[:date_added_direction].present? || sort_params[:price_direction]
-        results = results.send(:sort_by_date_added, sort_params[:date_added_direction], sort_params[:price_direction])
+      direction = sort_params[:direction] || 'asc'
+      case sort_params[:sort_by]
+      when 'date_added'
+        order(date_added: direction)
+      when 'price'
+        order(price: direction)
+      else
+        order(date_added: :asc)
       end
-      results
     end
   end
 end
