@@ -20,13 +20,13 @@ module Query
     private
 
     def sort_by_prise(params)
-      return unless params[:sort] == 'price'
+      return unless params[:sort_by] == 'price'
 
       @cars = @cars.order(price: params[:direction])
     end
 
     def sort_by_date_added(params)
-      return unless params[:sort] == 'date_added'
+      return unless params[:sort_by] == 'date_added'
 
       direction = params[:direction] == 'desc' ? 'desc' : 'asc'
       @cars = @cars.sort_by { |car| Date.strptime(car.date_added, '%d/%m/%Y') }
