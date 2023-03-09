@@ -4,13 +4,9 @@
 
 # controller for cars
 class CarsController < ApplicationController
-  # include Query
 
   def index
-    @cars = Car.filter(filter_params).sort_it(sort_params)
-    @pagy, @cars = pagy(@cars)
-    # sorter = Query::Sort.new(@cars, params)
-    # @cars = sorter.call
+    @pagy, @cars = pagy(Car.filter(filter_params).sort_it(sort_params))
   end
 
   def help; end

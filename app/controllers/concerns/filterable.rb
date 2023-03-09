@@ -5,8 +5,8 @@ module Filterable
   extend ActiveSupport::Concern
 
   included do
-    scope :filter_by_make, ->(make) { where make: make }
-    scope :filter_by_model, ->(model) { where model: model }
+    scope :filter_by_make, ->(make) { where('make ILIKE ?', make) }
+    scope :filter_by_model, ->(model) { where('model ILIKE ?', model) }
 
     scope :filter_by_year_from, ->(year_from) { where year: year_from.to_i..Float::INFINITY }
     scope :filter_by_year_to, ->(year_to) { where year: (0..year_to.to_i) }
