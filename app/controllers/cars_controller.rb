@@ -4,8 +4,11 @@
 
 # controller for cars
 class CarsController < ApplicationController
+  # include Query
+
   def index
-    @pagy, @cars = pagy(Car.filter(filter_params).sort_it(sort_params))
+    @cars = Car.filter(filter_params).sort_it(sort_params)
+    @pagy, @cars = pagy(@cars)
   end
 
   def help; end
