@@ -4,7 +4,6 @@
 
 # controller for cars
 class CarsController < ApplicationController
-
   def index
     @pagy, @cars = pagy(Car.filter(filter_params).sort_it(sort_params))
   end
