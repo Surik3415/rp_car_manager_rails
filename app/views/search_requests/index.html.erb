@@ -1,0 +1,13 @@
+<div class="wrapper">
+    <div class="container">
+    <%= currently_at %>
+
+        <div id="search_requests">
+            <% @search_requests.each do |search_request| %>
+                <%= render search_request %>
+            <% end %>
+        </div>
+
+        <%=link_to 'Back to Home page', root_path,  class: 'btn btn-primary m-4'%> 
+    </div>
+</div>

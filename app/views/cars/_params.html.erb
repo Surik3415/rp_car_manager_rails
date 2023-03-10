@@ -1,0 +1,16 @@
+<div>
+    <div class = "pt-4">
+        <%= tag.div 'Search rules:' unless params.permit(:make, :model, :year_from, :year_to, :price_from, :price_to).empty? %>
+        <%= tag.div "meke: #{params[:make]}" if params[:make].present? %>
+        <%= tag.div "model: #{params[:model]}" if params[:model].present? %>
+        <%= tag.div "price from: #{params[:price_from]}" if params[:price_from].present? %>
+        <%= tag.div "price to: #{params[:price_to]}" if params[:price_to].present? %>
+        <%= tag.div "year from: #{params[:year_from]}" if params[:year_from].present? %>
+        <%= tag.div "year to: #{params[:year_to]}" if params[:year_to].present? %>
+    </div>
+
+    <div class = "pt-4">
+        <%= tag.div "Sort by: #{params[:sort_by]}" if params[:sort_by].present? %>
+        <%= tag.div "Direction: #{params[:direction]}" if params[:direction].present? %>
+    </div>
+<div>
