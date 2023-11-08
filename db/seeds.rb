@@ -13,6 +13,7 @@
 #   year: Faker::Vehicle.year, price: Faker::Number.between(from: 10_000, to: 25_000))
 # end
 
+# FactoryBot.create(:car)
 Car.create(car_id: '1ec46226-330f-11ec-8d3d-0242ac130003',
            make: 'Ford',
            model: 'Fusion',

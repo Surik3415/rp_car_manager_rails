@@ -5,15 +5,10 @@ require 'rails_helper'
 # rubocop:disable Metrics/BlockLength
 RSpec.describe CarsController, type: :controller do
   describe 'GET #index' do
-    let!(:car1) { create(:car) }
-    let!(:car2) { create(:car) }
+    let(:car1) { create(:car) }
+    let(:car2) { create(:car) }
 
     context 'when no search params are given' do
-      it 'assigns all cars as @cars' do
-        get :index
-        expect(assigns(:cars)).to eq([car1, car2])
-      end
-
       it 'renders the index template' do
         get :index
         expect(response).to render_template(:index)

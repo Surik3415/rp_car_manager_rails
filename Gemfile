@@ -3,11 +3,11 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.2'
+ruby '3.2.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4', '>= 7.0.4.2'
-
+gem 'pry'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
@@ -58,12 +58,16 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
+  gem 'ffaker'
   gem 'rspec-rails'
   gem 'simplecov'
 end
 
 group :test do
+  gem 'capybara'
   gem 'database_cleaner-active_record'
+  gem 'selenium-webdriver'
+  gem 'webdriver'
 end
 
 group :development do
@@ -77,3 +81,5 @@ group :development do
 
   gem 'rubocop'
 end
+
+gem 'dotenv', '~> 2.8'
